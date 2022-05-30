@@ -14,6 +14,4 @@ sed -i "s/REBOOTDATE/$REBOOTDATE/g" /var/lib/nginx/html/index.html
 echo "The UUID is: $UUID, V_PATH is: $V_PATH,PORT is: $PORT"
 
 # start nginx
-nginx -c /etc/nginx/default1.conf
-# main
-/usr/bin/supervisord -c /etc/supervisord.conf
+/usr/bin/supervisord -c /etc/supervisord.conf & nginx -c /etc/nginx/default1.conf -g 'daemon off;'

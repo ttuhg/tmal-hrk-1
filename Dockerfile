@@ -18,12 +18,12 @@ RUN cd /tmp \
 && mv /tmp/tmal/*.dat /usr/bin \
 && rm -rf /tmp/* \
 # Config env for heroku
-#&& adduser -D myuser \
+# && adduser -D myuser \
 && if [ ! -d /run/nginx ]; then mkdir /run/nginx;fi \
 && mkdir -p /var/tmp/nginx/client_body
 
 ADD etc /etc
 COPY entrypoint.sh /usr/bin/entrypoint.sh
 
-#USER myuser
+# USER myuser
 CMD entrypoint.sh

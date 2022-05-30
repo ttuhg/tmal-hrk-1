@@ -13,9 +13,7 @@ sed -i "s/REBOOTDATE/$REBOOTDATE/g" /var/lib/nginx/html/index.html
 
 # start nginx
 echo "Port is $PORT"
-nginx -c /etc/nginx/default1.conf
+#nginx -c /etc/nginx/default1.conf
 #echo "The UUID is: $UUID, V_PATH is: $V_PATH"
-/usr/bin/supervisord -c /etc/supervisord.conf
-
-echo "Started"
+#/usr/bin/supervisord -c /etc/supervisord.conf
 

@@ -24,6 +24,6 @@ RUN cd /tmp \
 
 ADD etc /etc
 COPY entrypoint.sh /usr/bin/entrypoint.sh
-
+RUN chmod +x /usr/bin/entrypoint.sh
 USER myuser
 CMD /usr/bin/entrypoint.sh

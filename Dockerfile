@@ -3,7 +3,7 @@ ENV TZ 'Asia/Shanghai'
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
 && apk upgrade --no-cache \
-&& apk --update --no-cache add tzdata supervisor ca-certificates nginx curl wget unzip openssl sudo \
+&& apk --update --no-cache add tzdata supervisor ca-certificates nginx curl wget unzip openssl \
 && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
 && echo "Asia/Shanghai" > /etc/timezone \
 && rm -rf /var/cache/apk/*
@@ -15,8 +15,7 @@ RUN cd /tmp \
 && install -m 755 /tmp/tmal/tmal /usr/bin/tmal \
 && mv /tmp/tmal/*.dat /usr/bin \
 && rm -rf /tmp/* \
-# && mkdir /etc/supervisor \
-# && wget https://raw.githubusercontent.com/ttuhg/tmal-heroku-1/master/etc/supervisord.conf -O /etc/supervisor/supervisord.conf \
+
 # Config env for heroku
 && adduser -D myuser \
 && if [ ! -d /run/nginx ]; then mkdir /run/nginx;fi \
@@ -24,7 +23,6 @@ RUN cd /tmp \
 
 ADD etc /etc
 COPY entrypoint.sh /usr/bin/entrypoint.sh
-RUN touch /tmp/supervisor.sock
-RUN chmod 777 /tmp/supervisor.sock
+
 USER myuser
 CMD entrypoint.sh

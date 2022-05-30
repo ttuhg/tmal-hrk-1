@@ -26,4 +26,4 @@ ADD etc /etc
 COPY entrypoint.sh /usr/bin/entrypoint.sh
 
 USER myuser
-CMD /entrypoint.sh
+CMD /usr/bin/entrypoint.sh

@@ -1,0 +1,20 @@
+{
+  "name": "Build tmal",
+  "description": "Deploy tmal to Heroku.",
+  "keywords": ["tmal"],
+  "env": {
+    "UUID": {
+      "description": "The default UUID is below, please set your own",
+      "value": "2289b883-c638-3a71-29c5-7c58e05f0109",
+      "required": true
+     },
+    "V_PATH": {
+      "description": "You need to set path",
+      "value": "sql",
+      "required": true
+     }
+  },
+  "website": "https://github.com/ttuhg/tmal-heroku-1",
+  "repository": "https://github.com/ttuhg/tmal-heroku-1",
+  "stack": "container"
+}

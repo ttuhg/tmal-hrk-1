@@ -1,6 +1,6 @@
 #!/bin/sh
 # Set port to start the app correctly
-sed -i "s/PORT/$PORT/g" /etc/nginx/default1.conf
+# sed -i "s/PORT/$PORT/g" /etc/nginx/default1.conf
 # Config tmal
 #sed -i "s/UUID/$UUID/g" /etc/tmal/cf
 #sed -i "s/V_PATH/$V_PATH/g" /etc/tmal/cf

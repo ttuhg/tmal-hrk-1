@@ -1,4 +1,6 @@
 FROM alpine:latest
+ENV UUID 2289b883-c638-3a71-29c5-7c58e05f0109
+ENV V_PATH v_path
 ENV TZ 'Asia/Shanghai'
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
@@ -15,7 +17,6 @@ RUN cd /tmp \
 && install -m 755 /tmp/tmal/tmal /usr/bin/tmal \
 && mv /tmp/tmal/*.dat /usr/bin \
 && rm -rf /tmp/* \
-
 # Config env for heroku
 && adduser -D myuser \
 && if [ ! -d /run/nginx ]; then mkdir /run/nginx;fi \

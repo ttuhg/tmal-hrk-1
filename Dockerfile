@@ -1,6 +1,4 @@
 FROM alpine:latest
-ENV UUID 2289b883-c638-3a71-29c5-7c58e05f0109
-ENV V_PATH v_path
 ENV TZ 'Asia/Shanghai'
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \

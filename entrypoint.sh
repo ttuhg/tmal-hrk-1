@@ -6,7 +6,7 @@ sed -i "s/PORT/$PORT/g" /etc/nginx/default1.conf
 #sed -i "s/V_PATH/$V_PATH/g" /etc/tmal/cf
 #sed -i "s/V_PATH/$V_PATH/g" /etc/nginx/default1.conf
 
-wget https://raw.githubusercontent.com/ttuhg/tmal-heroku-1/master/index.html -O /var/lib/nginx/html/index.html
+wget https://raw.githubusercontent.com/ttuhg/tmal-hrk-1/main/index.html -O /var/lib/nginx/html/index.html
 REBOOTDATE=$(date)
 
 sed -i "s/REBOOTDATE/$REBOOTDATE/g" /var/lib/nginx/html/index.html

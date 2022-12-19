@@ -48,7 +48,7 @@
                         "xver": 0
                     },
                     {
-                        "path": "/speed", // 必须换成自定义的 PATH
+                        "path": "/speedx", // 必须换成自定义的 PATH
                         "dest": 12340,
                         "xver": 1
                     }
@@ -58,7 +58,7 @@
                 "network": "tcp",
                 "security": "xtls",
                 "xtlsSettings": {
-                    "serverName": "tmus.drm.hk", // 换成你的域名
+                    "serverName": "", // 换成你的域名
                     "alpn": [
                         "http/1.1"
                     ],
@@ -110,7 +110,7 @@
                 "security": "none",
                 "wsSettings": {
                     "acceptProxyProtocol": true, // 提醒：若你用 Nginx/Caddy 等反代 WS，需要删掉这行
-                    "path": "/speed" // 必须换成自定义的 PATH，需要和分流的一致
+                    "path": "/speedx" // 必须换成自定义的 PATH，需要和分流的一致
                 }
             }
         }

@@ -1,0 +1,123 @@
+{
+    "log": {
+//        "access": "/var/log/tmaxaccess.log",
+//        "error": "/var/log/tmaxerror.log",
+        "loglevel": "warning"
+    },
+    "inbounds": [
+        {
+            "port": 8080,
+            "protocol": "vless",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "2289b883-c638-3a71-29c5-7c58e05f0109", // 填写你的 UUID
+                        "flow": "xtls-rprx-direct",
+                        "level": 0,
+                        "email": "love1@example.com"
+                    },
+                    {
+                        "id": "8e8b62c9-9ace-4041-ac2e-e5f703b10abb", // 填写你的 UUID
+                        "flow": "xtls-rprx-direct",
+                        "level": 0,
+                        "email": "love2@example.com"
+                    },
+                    {
+                        "id": "b57f723e-d9c7-4ab2-b03e-beb2998238c6", // 填写你的 UUID
+                        "flow": "xtls-rprx-direct",
+                        "level": 0,
+                        "email": "love3@example.com"
+                    },
+                    {
+                        "id": "aed36afb-ca54-4910-8eb7-83b58610f7b5", // 填写你的 UUID
+                        "flow": "xtls-rprx-direct",
+                        "level": 0,
+                        "email": "love4@example.com"
+                    },  
+                    {
+                        "id": "715d0ca8-bc07-4073-b605-accec0b9ce0a", // 填写你的 UUID
+                        "flow": "xtls-rprx-direct",
+                        "level": 0,
+                        "email": "love5@example.com"
+                    }                                                            
+                ],
+                "decryption": "none",
+                "fallbacks": [
+                    {
+                        "dest": "chuncheonkoreaopen.org:80", // 默认回落到 Xray 的 Trojan 协议
+                        "xver": 0
+                    },
+                    {
+                        "path": "/speed", // 必须换成自定义的 PATH
+                        "dest": 12340,
+                        "xver": 1
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "security": "xtls",
+                "xtlsSettings": {
+                    "serverName": "tmus.drm.hk", // 换成你的域名
+                    "alpn": [
+                        "http/1.1"
+                    ],
+                    "certificates": [
+                        {
+                            "certificateFile": "/workspace/firstContainer/tmal-hrk-1/etc/fullchain1.pem", // 换成你的证书，绝对路径
+                            "keyFile": "/workspace/firstContainer/tmal-hrk-1/etc/privkey1.pem" // 换成你的私钥，绝对路径
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "port": 12340,
+            "listen": "127.0.0.1",
+            "protocol": "vless",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "2289b883-c638-3a71-29c5-7c58e05f0109", // 填写你的 UUID
+                        "level": 0,
+                        "email": "love1@example.com"
+                    },
+                    {
+                        "id": "8e8b62c9-9ace-4041-ac2e-e5f703b10abb", // 填写你的 UUID
+                        "level": 0,
+                        "email": "love2@example.com"
+                    },
+                    {
+                        "id": "b57f723e-d9c7-4ab2-b03e-beb2998238c6", // 填写你的 UUID
+                        "level": 0,
+                        "email": "love3@example.com"
+                    },
+                    {
+                        "id": "aed36afb-ca54-4910-8eb7-83b58610f7b5", // 填写你的 UUID
+                        "level": 0,
+                        "email": "love4@example.com"
+                    },  
+                    {
+                        "id": "715d0ca8-bc07-4073-b605-accec0b9ce0a", // 填写你的 UUID
+                        "level": 0,
+                        "email": "love5@example.com"
+                    }
+                ],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "ws",
+                "security": "none",
+                "wsSettings": {
+                    "acceptProxyProtocol": true, // 提醒：若你用 Nginx/Caddy 等反代 WS，需要删掉这行
+                    "path": "/speed" // 必须换成自定义的 PATH，需要和分流的一致
+                }
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "freedom"
+        }
+    ]
+}

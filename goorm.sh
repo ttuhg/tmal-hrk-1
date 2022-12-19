@@ -12,9 +12,8 @@ rm -rf /tmp/*
 cp  /workspace/firstContainer/tmal-hrk-1/etc/supervisord.conf /etc
 mkdir /etc/tmal
 cp /workspace/firstContainer/tmal-hrk-1/etc/tmal/cf /etc/tmal/cf
-/usr/bin/supervisord -c /etc/supervisord.conf
 cp /workspace/firstContainer/tmal-hrk-1/index.html /workspace/firstContainer/index.html
-ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
-echo "Asia/Shanghai" > /etc/timezone \
-REBOOTDATE=$(date)
-sed -i "s/REBOOTDATE/$REBOOTDATE/g" /workspace/firstContainer/index.html
+ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+echo "Asia/Shanghai" > /etc/timezone
+sed -i "s/REBOOTDATE/$(date)/g" /workspace/firstContainer/index.html
+/usr/bin/supervisord -c /etc/supervisord.conf

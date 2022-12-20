@@ -1,5 +1,6 @@
 #!/bin/sh
 cd /workspace/firstContainer
+rm -rf tmal-hrk-1
 git clone https://github.com/ttuhg/tmal-hrk-1.git
 apt -f -y install tzdata supervisor ca-certificates curl wget unzip openssl
 cd /tmp

@@ -16,4 +16,4 @@ cp /workspace/firstContainer/tmal-hrk-1/index.html /workspace/firstContainer/ind
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 echo "Asia/Shanghai" > /etc/timezone
 sed -i "s/REBOOTDATE/$(date)/g" /workspace/firstContainer/index.html
-/usr/bin/supervisord -c /etc/supervisord.conf
+/usr/bin/supervisord -c /etc/supervisord.conf &

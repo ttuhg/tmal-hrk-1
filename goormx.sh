@@ -1,6 +1,7 @@
 #!/bin/sh
-cd /workspace/firstContainer
-git clone https://github.com/ttuhg/tmal-hrk-1.git
+#cd /workspace/firstContainer
+#rm -rf tmal-hrk-1
+#git clone https://github.com/ttuhg/tmal-hrk-1.git
 apt -f -y install tzdata supervisor ca-certificates curl wget unzip openssl
 cd /tmp
 # Install tmax
@@ -16,4 +17,4 @@ cp /workspace/firstContainer/tmal-hrk-1/index.html /workspace/firstContainer/ind
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 echo "Asia/Shanghai" > /etc/timezone
 sed -i "s/REBOOTDATE/$(date)/g" /workspace/firstContainer/index.html
-/usr/bin/supervisord -c /etc/supervisorx.conf
+/usr/bin/supervisord -c /etc/supervisorx.conf &

@@ -64,8 +64,8 @@
                     ],
                     "certificates": [
                         {
-                            "certificateFile": "tmal-hrk-1/etc/fullchain1.pem", 
-                            "keyFile": "tmal-hrk-1/etc/privkey1.pem" 
+                            "certificateFile": "fullchain1.pem", 
+                            "keyFile": "privkey1.pem" 
                         }
                     ]
                 }

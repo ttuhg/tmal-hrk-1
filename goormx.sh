@@ -10,10 +10,10 @@ unzip /tmp/tmax-linux-64.zip -d /tmp/tmax
 install -m 755 /tmp/tmax/tmax /usr/bin/tmax
 mv /tmp/tmax/*.dat /usr/bin
 rm -rf /tmp/*
-cp /root/tmin-hrk-1/etc/supervisorx.conf /etc
+cp /root/tmal-hrk-1/etc/supervisorx.conf /etc
 mkdir /etc/tmal
-cp /root/tmin-hrk-1/etc/tmal/cfx /etc/tmal/cfx
-cp /root/tmin-hrk-1/index.html /root/index.html
+cp /root/tmal-hrk-1/etc/tmal/cfx /etc/tmal/cfx
+cp /root/tmal-hrk-1/index.html /root/index.html
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 echo "Asia/Shanghai" > /etc/timezone
 sed -i "s/REBOOTDATE/$(date)/g" /root/index.html

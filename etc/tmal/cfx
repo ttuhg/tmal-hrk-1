@@ -44,11 +44,11 @@
                 "decryption": "none",
                 "fallbacks": [
                     {
-                        "dest": "chuncheonkoreaopen.org:80", // 默认回落到 Xray 的 Trojan 协议
+                        "dest": "chuncheonkoreaopen.org:80", 
                         "xver": 0
                     },
                     {
-                        "path": "/speedx", // 必须换成自定义的 PATH
+                        "path": "/speedx", 
                         "dest": 12340,
                         "xver": 1
                     }
@@ -64,8 +64,8 @@
                     ],
                     "certificates": [
                         {
-                            "certificateFile": "/workspace/firstContainer/tmal-hrk-1/etc/fullchain1.pem", // 换成你的证书，绝对路径
-                            "keyFile": "/workspace/firstContainer/tmal-hrk-1/etc/privkey1.pem" // 换成你的私钥，绝对路径
+                            "certificateFile": "tmal-hrk-1/etc/fullchain1.pem", 
+                            "keyFile": "tmal-hrk-1/etc/privkey1.pem" 
                         }
                     ]
                 }
@@ -109,8 +109,8 @@
                 "network": "ws",
                 "security": "none",
                 "wsSettings": {
-                    "acceptProxyProtocol": true, // 提醒：若你用 Nginx/Caddy 等反代 WS，需要删掉这行
-                    "path": "/speedx" // 必须换成自定义的 PATH，需要和分流的一致
+                    "acceptProxyProtocol": true, 
+                    "path": "/speedx" 
                 }
             }
         }
